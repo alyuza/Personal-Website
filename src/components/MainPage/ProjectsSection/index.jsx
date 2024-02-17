@@ -1,8 +1,6 @@
-const ProjectSection = () => {
+export default function ProjectSection() {
   return (
     <>
     </>
   )
 }
-
-export default ProjectSection

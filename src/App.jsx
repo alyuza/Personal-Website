@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { NavBar, Footer } from './components'
 import { ThemeProvider } from '@emotion/react'; // Import ThemeProvider from Emotion
 import theme from '../theme'; // Import your custom theme
-import { AboutSection, HomeSection, TechnologiesSection, ProjectSection, ContactSection } from './components/MainPage';
+import { AboutSection, HomeSection, ContactSection, TechnologiesSection } from './components/MainPage';
+import ProjectSection from './components/MainPage/ProjectsSection';
 
 function App() {
   return (
