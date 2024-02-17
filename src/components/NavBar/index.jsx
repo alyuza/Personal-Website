@@ -58,8 +58,8 @@ export default function NavBar() {
               <List sx={{ padding: '0' }}>
                 <ListItem sx={{ display: 'flex', justifyContent: 'space-between', padding: '0' }}>
                   <Box className='box1' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <img src={HeaderLogo} alt="Logo" style={{ height: '30px', width: 'auto', cursor: 'pointer' }} onClick={() => navigateTo('')} />
-                    <Typography className={styles.logoText} variant="h1" onClick={() => navigateTo('')}>
+                    <img src={HeaderLogo} alt="Logo" style={{ height: '30px', width: 'auto', cursor: 'pointer' }} onClick={() => mobileNavigateTo('')} />
+                    <Typography className={styles.logoText} variant="h1" onClick={() => mobileNavigateTo('')}>
                       Alyuza
                     </Typography>
                   </Box>
