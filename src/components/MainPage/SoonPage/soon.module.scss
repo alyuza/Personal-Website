@@ -3,12 +3,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 120px;
 
   .soonImage {
-    width: 100%;
+    display: flex;
+    position: relative;
+    width: 1000px;
     height: auto;
     animation: spinAnimation 0.5s linear;
     /* Apply spinning animation */
+  }
+
+  .kepalaImage {
+    position: relative;
+    width: 150px;
+    top: -120px;
+    right: 340px;
+    height: auto;
+    animation: spinAnimation 2.5s;
   }
 
   @keyframes spinAnimation {
@@ -20,5 +32,27 @@
       transform: rotate(360deg);
     }
   }
+}
 
+@media only screen and (max-width:1000px) {
+  .soonPage {
+    padding-left: 90px;
+    .soonImage {
+      display: flex;
+      position: relative;
+      width: 350px;
+      height: auto;
+      animation: spinAnimation 0.5s linear;
+      /* Apply spinning animation */
+    }
+
+    .kepalaImage {
+      position: relative;
+      width: 70px;
+      top: -60px;
+      right: 120px;
+      height: auto;
+      animation: spinAnimation 2.5s;
+    }
+  }
 }
