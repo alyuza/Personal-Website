@@ -1,0 +1,81 @@
+$color0: white;
+$color1: #cfd8dc;
+$color2: rgb(216, 27, 68); // red
+$color3: rgb(214, 2, 2); // darker
+
+$bcolor1: rgb(242, 245, 255);
+
+.about {
+  padding: 20px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  .aboutFlexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .avatar {
+      width: 500px;
+      height: auto;
+      margin-right: 40px;
+    }
+
+    .containerText {
+      width: 500px;
+      margin-left: 50px;
+
+      .aboutMeText{
+        margin: 10px 0px;
+      }
+      .aboutDescription {}
+    }
+
+  }
+
+}
+
+.skillContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 50px;
+  border: solid 1px black;
+}
+
+@media only screen and (max-width:1200px) {
+  .about {
+    .aboutFlexbox {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .avatar {
+        width: 100%;
+        height: auto;
+        margin: 0;
+      }
+
+      .containerText {
+        width: 90vw;
+        padding: 10px;
+        margin: 0;
+
+        .aboutDescription {
+          width: 90vw;
+        }
+      }
+
+    }
+  }
+
+}
+
+@media only screen and (max-width:1200px) {
+  .about {}
+}

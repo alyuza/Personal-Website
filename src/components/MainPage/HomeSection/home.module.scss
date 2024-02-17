@@ -1,0 +1,185 @@
+$color0: white;
+$color1: #cfd8dc;
+$color2: rgb(216, 27, 68); // red
+$color3: rgb(214, 2, 2); // darker
+
+$bcolor1: linear-gradient(180deg, rgba(255, 255, 255, 0.101) 0%, rgba(255, 255, 255, 0.10407913165266103) 14%, rgba(255, 255, 255, 0.10127801120448177) 82%, rgba(216, 27, 123, 0.10127801120448177) 100%);
+
+.home {
+  background: $bcolor1;
+  padding: 0px 20px 20px 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .homeFlexbox {
+    display: flex;
+
+    .homeContainerText {
+      // position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      left: 15vw;
+
+      animation-name: fadeInFromLeft;
+      animation-duration: 1.5s;
+
+      .homeText {
+        width: 50%;
+
+        .wave {
+          width: 32px;
+        }
+      }
+
+      .homeTitle {
+        // width: 50%;
+      }
+
+      .homeDescription {
+        // width: 35%;
+        margin: 5px 0px 40px 0px;
+      }
+
+      .downloadButton {
+        padding: 0;
+        width: 225px;
+      }
+    }
+
+    .homePhoto {
+      display: flex;
+      width: 500px;
+      height: auto;
+      // position: relative;
+      right: 15vw;
+
+      animation-name: fadeInFromRight;
+      animation-duration: 1.5s;
+    }
+  }
+
+  .containerSocialMedia {
+    display: flex;
+    position: relative;
+    left: -8px;
+    bottom: 0;
+    margin-top: 80px;
+    gap: 8px;
+
+    animation-name: fadeInFromBottom;
+    animation-duration: 1.5s;
+
+    .socialMediaIcon {
+      &:hover {
+        color: $color2;
+        scale: 1.3;
+      }
+    }
+  }
+
+}
+
+// Media Queries
+@media only screen and (max-width: 1200px) {
+  .home {
+    .homeFlexbox {
+      .homeContainerText {
+        left: 5vw;
+
+        .homeText {
+          width: 100%;
+        }
+
+        .homeTitle {
+          width: 100%;
+        }
+
+        .homeDescription {
+          width: 70%;
+        }
+      }
+
+      .homePhoto {
+        right: 0;
+        width: 450px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; // Align children to the start (top) of the container
+    align-items: flex-start; // Align children to the start (top) of the container
+
+    .homeFlexbox {
+      flex-direction: column-reverse;
+
+      .homeContainerText {
+        left: 0;
+        text-align: left;
+        padding: 10px;
+
+        .homeDescription {
+          width: 100%;
+          margin-top: 12px;
+        }
+      }
+
+      .homePhoto {
+        display: flex;
+        margin: 20px auto;
+        width: 275px;
+      }
+    }
+
+    .containerSocialMedia {
+      display: flex;
+      position: relative;
+      margin-top: 40px;
+      left: -8px;
+    }
+  }
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(300%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

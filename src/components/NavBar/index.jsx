@@ -1,118 +1,137 @@
-import { useState } from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import MenuIcon from "@material-ui/icons/Menu";
-import Button from "@material-ui/core/Button";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   List,
   ListItem,
-  ListItemText,
   Collapse,
   Box,
+  IconButton,
+  AppBar,
+  Toolbar,
+  Typography,
 } from "@mui/material";
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import HeaderLogo from '../../assets/logonavbar.png';
+import styles from './navbar.module.scss'
 
 export default function NavBar() {
-  const small = useMediaQuery("(max-width:750px)");
-  const full = useMediaQuery("(min-width:750px)");
+  const small = useMediaQuery("(max-width:900px)");
+  const full = useMediaQuery("(min-width:900px)");
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Retrieve active section from localStorage when component mounts
+    const storedSection = localStorage.getItem('activeSection');
+    if (storedSection) {
+      setActiveSection(storedSection);
+    }
+  }, []); // Empty dependency array to run this effect only once on component mount
 
   const handleClick = () => {
     setOpen(!open);
   };
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const navigateTo = (section) => {
+    navigate("/" + section);
+    window.location.reload(); // Refresh the page
+  };
+
+  const mobileNavigateTo = (section) => {
+    navigate("/" + section);
+    setOpen(false);
+    setActiveSection(section);
+    // Store active section in localStorage
+    localStorage.setItem('activeSection', section);
+    window.location.reload(); // Refresh the page
   };
 
   return (
     <>
-      <AppBar position="fixed" style={{ backgroundColor: 'black' }}>
-        <Toolbar >
+      <AppBar position="sticky" className={styles.navbar}>
+        <Toolbar className={styles.navbar}>
           {small && (
-            <>
-              {/* Change Grid to div with display: flex */}
-              <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-                <List>
-                  <ListItem sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Typography
-                      variant="h6"
-                      color="inherit"
-                      onClick={() => { setOpen(false) }}
-                    >
-                      ALYUZA.COM
+            <Box style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+              <List sx={{ padding: '0' }}>
+                <ListItem sx={{ display: 'flex', justifyContent: 'space-between', padding: '0' }}>
+                  <Box className='box1' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img src={HeaderLogo} alt="Logo" style={{ height: '30px', width: 'auto', cursor: 'pointer' }} onClick={() => navigateTo('')} />
+                    <Typography className={styles.logoText} variant="h1" onClick={() => navigateTo('')}>
+                      Alyuza
                     </Typography>
-                    <Button onClick={handleClick}>
-                      <MenuIcon style={{ color: 'white' }} />
-                      {open ? <ExpandLess style={{ color: 'white' }} /> : <ExpandMore style={{ color: 'white' }} />}
-                    </Button>
-                  </ListItem>
-                  <Collapse in={open} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-                      <ListItem>
-                        <ListItemText href='#home' primary="Home" />
-                      </ListItem>
-                      <ListItem>
-                        <ListItemText href='#about' primary="About me" />
-                      </ListItem>
-                      <ListItem>
-                        <ListItemText href='#skills' primary="Skills" />
-                      </ListItem>
-                      <ListItem>
-                        <ListItemText href='#projects' primary="Projects" />
-                      </ListItem>
-                      <ListItem sx={{ backgroundColor: 'white', borderRadius: '30px', color: 'black', width: '50%' }}>
-                        <ListItemText href='#getintouch' primary="Get In Touch" />
-                      </ListItem>
-                    </List>
-                  </Collapse>
-                </List>
-              </div>
-            </>
+                  </Box>
+                  <IconButton onClick={handleClick} style={{ color: 'white' }}>
+                    <MenuIcon className={styles.burgerButton} />
+                    {open ? <ExpandLess className={styles.burgerButton} /> : <ExpandMore className={styles.burgerButton} />}
+                  </IconButton>
+                </ListItem>
+                <Collapse in={open} timeout="auto" unmountOnExit className={styles.collapse}>
+                  <List component="div" disablePadding>
+                    <ListItem className={styles.listItem} onClick={() => mobileNavigateTo('')}>
+                      <Typography className={styles.listItemText}>
+                        Home {activeSection === '' && <span className={styles.arrowIcon}> <ArrowLeftIcon />You{`'`}re here </span>}
+                      </Typography>
+                    </ListItem>
+                    <ListItem className={styles.listItem} onClick={() => mobileNavigateTo('projects')}>
+                      <Typography className={styles.listItemText}>
+                        Projects {activeSection === 'projects' && <span className={styles.arrowIcon}> <ArrowLeftIcon />You{`'`}re here </span>}
+                      </Typography>
+                    </ListItem>
+                    <ListItem className={styles.listItem} onClick={() => mobileNavigateTo('about')}>
+                      <Typography className={styles.listItemText}>
+                        About {activeSection === 'about' && <span className={styles.arrowIcon}> <ArrowLeftIcon />You{`'`}re here </span>}
+                      </Typography>
+                    </ListItem>
+                    <ListItem className={styles.listItem} onClick={() => mobileNavigateTo('technologies')}>
+                      <Typography className={styles.listItemText}>
+                        Technologies {activeSection === 'technologies' && <span className={styles.arrowIcon}> <ArrowLeftIcon />You{`'`}re here </span>}
+                      </Typography>
+                    </ListItem>
+                    <ListItem className={styles.listItem} onClick={() => mobileNavigateTo('contact')}>
+                      <Typography className={styles.listItemText}>
+                        Contact {activeSection === 'contact' && <span className={styles.arrowIcon}> <ArrowLeftIcon />You{`'`}re here </span>}
+                      </Typography>
+                    </ListItem>
+                  </List>
+                </Collapse>
+              </List>
+            </Box>
           )}
 
           {full && (
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-              <Box className='box1' sx={{ p: 2 }}>
-                <Typography variant="h6" color="inherit">
-                  ALYUZA.COM
+            <Box style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+              <Box className='box1' sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <img src={HeaderLogo} alt="Logo" style={{ height: '40px', width: 'auto', cursor: 'pointer' }} onClick={() => navigateTo('')} />
+                <Typography className={styles.logoText} variant="h1" color="inherit" onClick={() => navigateTo('')} >
+                  Alyuza Satrio Prayogo
                 </Typography>
               </Box>
-              <Box className='box2' sx={{ p: 2, display: 'flex', justifyContent: 'flex-end' }}>
-                <Button color="inherit" sx={{ color: 'white' }}
-                  onClick={() => scrollToSection('home')}>
+              <Box className='box2' sx={{ p: 2, display: 'flex', justifyContent: 'flex-end', gap: '30px' }}>
+                <Typography className={styles.navbarText} onClick={() => navigateTo('')} style={{ fontWeight: 'bold' }}>
                   Home
-                </Button>
-                <Button color="inherit" sx={{ color: 'white' }}
-                  onClick={() => scrollToSection('about')}>
-                  About me
-                </Button>
-                <Button color="inherit" sx={{ color: 'white' }}
-                  onClick={() => scrollToSection('skills')}>
-                  Skills
-                </Button>
-                <Button color="inherit" sx={{ color: 'white' }}
-                  onClick={() => scrollToSection('projects')}>
+                </Typography>
+                <Typography className={styles.navbarText} onClick={() => navigateTo('about')}>
+                  About
+                </Typography>
+                <Typography className={styles.navbarText} onClick={() => navigateTo('projects')}>
                   Projects
-                </Button>
-                <Box sx={{ backgroundColor: 'white', borderRadius: '30px', marginLeft: '20px' }}>
-                  <Button color="inherit" style={{ color: 'black' }}
-                    onClick={() => scrollToSection('getintouch')}>
-                    Get In Touch
-                  </Button>
-                </Box>
+                </Typography>
+                <Typography className={styles.navbarText} onClick={() => navigateTo('technologies')}>
+                  Technologies
+                </Typography>
+                <Typography className={styles.navbarText} onClick={() => navigateTo('contact')}>
+                  Contact
+                </Typography>
               </Box>
-            </div>
+            </Box>
           )}
         </Toolbar>
       </AppBar>
-      <Toolbar />
     </>
   );
 }

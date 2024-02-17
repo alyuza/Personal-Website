@@ -1,0 +1,76 @@
+.c-button {
+  color: #000;
+  font-weight: 700;
+  font-family: 'Nunito Sans';
+  font-size: 20px;
+  text-decoration: none;
+  padding: 0.4em 0.8em;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+}
+
+.c-button--gooey {
+  color: rgb(216, 27, 68);
+  background-color: rgb(242, 245, 255);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 4px solid rgb(216, 27, 68);
+  border-radius: 0;
+  position: relative;
+  transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs {
+  height: 100%;
+  filter: url(#goo);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: -3px;
+  right: -1px;
+  z-index: -1;
+}
+
+.c-button--gooey .c-button__blobs div {
+  background-color: rgb(216, 27, 68);
+  width: 34%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  transform: scale(1.4) translateY(125%) translateZ(0);
+  transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(1) {
+  left: -5%;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(2) {
+  left: 30%;
+  transition-delay: 60ms;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(3) {
+  left: 66%;
+  transition-delay: 25ms;
+}
+
+.c-button--gooey {
+  color: black;
+}
+
+.c-button--gooey .c-button__blobs div {
+  animation: blobAnimation 1.2s infinite alternate;
+  color: black;
+}
+
+@keyframes blobAnimation {
+  0% {
+    transform: scale(1.4) translateY(0) translateZ(0);
+
+  }
+}

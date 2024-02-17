@@ -1,0 +1,68 @@
+$color0: white;
+$color1: #cfd8dc;
+$color2: rgb(216, 27, 68); // red
+$color3: rgb(214, 2, 2); // darker
+
+$bcolor1: rgb(242, 245, 255);
+
+.technologies{
+  height: 100vh;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  padding: 20px;
+
+  .skillsContainer {
+    height: 200px;
+    width: 55%;
+
+    .swiper {
+      .swiperItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        
+        .skillImage {
+          width: 120px;
+          height: auto;
+        }
+
+        .text {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    // Add styles for screens with a maximum width of 1200px
+  }
+
+  @media only screen and (max-width: 768px) {
+    .skills {
+      padding: 10px; // Adjusted padding for smaller screens
+    }
+
+    .skillsContainer {
+      width: 100%; // Make the container full width on smaller screens
+    }
+
+    .swiper {
+      & {
+        // Adjust styles for smaller screens
+        padding: 0; // Example adjustment, modify as needed
+      }
+
+      .swiperItem {
+        // Example adjustment, modify as needed
+        width: 50%; // Set the width of each item to 50% on smaller screens
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+$color0: white;
+$color1: rgb(26, 26, 26);
+$color2: rgb(216, 27, 68); // red
+$color3: rgb(214, 2, 2); // darker
+
+$bcolor1: rgb(242, 245, 255);
+
+.navbar {
+  background-color: rgba(242, 245, 255, 0.2) !important;
+  backdrop-filter: blur(20px);
+
+  .burgerButton {
+    color: black;
+  }
+
+  .logoText {
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    font-size: 22px;
+
+    &:hover {
+      color: $color2;
+    }
+  }
+
+  .collapse {
+    display: flex;
+    background-color: rgba(242, 245, 255, 1) !important;
+    backdrop-filter: blur(20px) !important;
+    position: absolute;
+    top: 48px;
+    right: 0px;
+    width: 100%;
+    padding-bottom: 20px;
+    box-shadow: -4px 6px 10px rgba(0, 0, 0, 0.2);
+
+    .listItem {
+
+      .listItemText {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        margin: 5px 0px 10px 15px;
+        cursor: pointer;
+
+        &:hover {
+          color: rgb(216, 27, 68);
+        }
+      }
+    }
+  }
+
+  .navbarText {
+    position: relative;
+    color: black;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .navbarText::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+  }
+
+  .navbarText:hover {
+    color: $color2;
+  }
+
+  .navbarText:hover::after {
+    background-color: $color2;
+
+  }
+
+  .arrowIcon {
+    color: $color2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    .listItemText {
+      margin: 5px 0px 5px 5px !important;
+    }
+
+    .logoText {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.soonPage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .soonImage {
+    width: 100%;
+    height: auto;
+    animation: spinAnimation 0.5s linear;
+    /* Apply spinning animation */
+  }
+
+  @keyframes spinAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+}
