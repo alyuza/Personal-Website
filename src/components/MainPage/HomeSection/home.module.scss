@@ -3,12 +3,13 @@ $color1: #cfd8dc;
 $color2: rgb(216, 27, 68); // red
 $color3: rgb(214, 2, 2); // darker
 
+$bcolor0: rgb(242, 245, 255);
 $bcolor1: linear-gradient(180deg, rgba(255, 255, 255, 0.101) 0%, rgba(255, 255, 255, 0.10407913165266103) 14%, rgba(255, 255, 255, 0.10127801120448177) 82%, rgba(216, 27, 123, 0.10127801120448177) 100%);
 
 .home {
-  background: $bcolor1;
+  background: $bcolor0;
   padding: 0px 20px 20px 20px;
-  height: 88.5vh;
+  height: 86vh;
   display: flex;
   justify-content: center;
   align-items: center;
