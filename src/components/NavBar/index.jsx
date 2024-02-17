@@ -39,7 +39,6 @@ export default function NavBar() {
 
   const navigateTo = (section) => {
     navigate("/" + section);
-    window.location.reload(); // Refresh the page
   };
 
   const mobileNavigateTo = (section) => {
@@ -48,7 +47,6 @@ export default function NavBar() {
     setActiveSection(section);
     // Store active section in localStorage
     localStorage.setItem('activeSection', section);
-    window.location.reload(); // Refresh the page
   };
 
   return (
