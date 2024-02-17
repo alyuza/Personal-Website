@@ -1,11 +1,12 @@
-import { Box, Typography } from "@mui/material"
-import avatar from '../../../assets/avatar2.png'
-import styles from './about.module.scss'
+// import { Box, Typography } from "@mui/material"
+// import avatar from '../../../assets/avatar2.png'
+// import styles from './about.module.scss'
+import { SoonPage } from ".."
 
 const AboutSection = () => {
   return (
     <>
-      <Box id="about" className={styles.about}>
+      {/* <Box id="about" className={styles.about}>
         <Box className={styles.aboutFlexbox}>
           <Box >
             <img className={styles.avatar} src={avatar} alt="Alyuza's Photo Profile" />
@@ -25,7 +26,8 @@ const AboutSection = () => {
             </Typography>
           </Box>
         </Box>
-      </Box >
+      </Box > */}
+      <SoonPage/>
     </>
   )
 }

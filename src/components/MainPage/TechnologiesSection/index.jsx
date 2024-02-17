@@ -1,28 +1,30 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Box, Typography } from '@mui/material';
-import pict1 from '../../../assets/1.png'
-import pict2 from '../../../assets/2.png'
-import pict3 from '../../../assets/3.png'
-import pict4 from '../../../assets/4.png'
-import pict5 from '../../../assets/5.png'
-import pict6 from '../../../assets/6.png'
-import pict7 from '../../../assets/7.png'
-import pict8 from '../../../assets/8.png'
-import pict9 from '../../../assets/9.png'
-import pict10 from '../../../assets/10.png'
-import pict11 from '../../../assets/11.png'
-import pict12 from '../../../assets/12.png'
-import pict13 from '../../../assets/13.png'
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Navigation } from 'swiper/modules';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import { Box, Typography } from '@mui/material';
+// import pict1 from '../../../assets/1.png'
+// import pict2 from '../../../assets/2.png'
+// import pict3 from '../../../assets/3.png'
+// import pict4 from '../../../assets/4.png'
+// import pict5 from '../../../assets/5.png'
+// import pict6 from '../../../assets/6.png'
+// import pict7 from '../../../assets/7.png'
+// import pict8 from '../../../assets/8.png'
+// import pict9 from '../../../assets/9.png'
+// import pict10 from '../../../assets/10.png'
+// import pict11 from '../../../assets/11.png'
+// import pict12 from '../../../assets/12.png'
+// import pict13 from '../../../assets/13.png'
 
-import styles from './technologies.module.scss'
+// import styles from './technologies.module.scss'
+import { SoonPage } from '..';
 
 const TechnologiesSection = () => {
   return (
     <>
-      <Box className={styles.technologies}>
+    <SoonPage/>
+      {/* <Box className={styles.technologies}>
         <Box id="skills" className={styles.skills}>
           <Typography variant='h4'>
             SKILLS
@@ -121,7 +123,7 @@ const TechnologiesSection = () => {
             </Swiper>
           </Box>
         </Box>
-      </Box>
+      </Box> */}
     </>
   )
 }
