@@ -30,17 +30,22 @@ $bcolor1: linear-gradient(180deg, rgba(255, 255, 255, 0.101) 0%, rgba(255, 255, 
       .homeText {
         width: 50%;
 
-        .wave {
-          width: 32px;
-        }
+      }
+
+      .wave {
+        width: 58px;
       }
 
       .homeTitle {
-        // width: 50%;
+        font-size: 34px;
+      }
+
+      .homeSubTitle {
+        font-size: 46px;
       }
 
       .homeDescription {
-        // width: 35%;
+        font-size: 26px;
         margin: 5px 0px 40px 0px;
       }
 
@@ -113,7 +118,7 @@ $bcolor1: linear-gradient(180deg, rgba(255, 255, 255, 0.101) 0%, rgba(255, 255, 
 
 @media only screen and (max-width: 768px) {
   .home {
-    height: 125vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; // Align children to the start (top) of the container

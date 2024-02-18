@@ -63,10 +63,11 @@ export default function NavBar() {
                       Alyuza
                     </Typography>
                   </Box>
-                  <IconButton onClick={handleClick} style={{ color: 'white' }}>
+                  <IconButton onClick={handleClick} aria-label={open ? "Collapse menu" : "Expand menu"} style={{ color: 'white' }}>
                     <MenuIcon className={styles.burgerButton} />
                     {open ? <ExpandLess className={styles.burgerButton} /> : <ExpandMore className={styles.burgerButton} />}
                   </IconButton>
+
                 </ListItem>
                 <Collapse in={open} timeout="auto" unmountOnExit className={styles.collapse}>
                   <List component="div" disablePadding>

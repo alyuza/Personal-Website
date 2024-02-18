@@ -22,29 +22,30 @@ export default function HomeSection() {
     <Box id="home" className={styles.home}>
       <Box className={styles.homeFlexbox}>
         <Box className={styles.homeContainerText}>
-          <Typography className={styles.homeText} variant="h4">
+          <Typography className={styles.homeTitle} variant='h2'>
             Hello <img className={styles.wave} src={wave} alt='wave-icon' />
           </Typography>
-          <Typography className={styles.homeTitle} variant='h3'>
+          <Typography className={styles.homeSubTitle} variant='h2'>
             I{'\''}m <span style={{ color: 'rgb(216, 27, 68)' }}>Alyuza</span> Satrio Prayogo
           </Typography>
-          <Typography variant='h5' className={styles.homeDescription}>
+          <Typography variant='h3' className={styles.homeDescription}>
             Full Stack Software Engineer
           </Typography>
           <Button className={styles.downloadButton} href='https://drive.google.com/file/d/1WQThDEUCxOr40pGrzQ6NM0SXhjtpzpyS/view?usp=sharing' target="_blank" rel="noreferrer" >
             <ButtonCV />
           </Button>
+
           <Box className={styles.containerSocialMedia}>
-            <IconButton href="https://www.linkedin.com/in/alyuzasp/" target="_blank" rel="noreferrer">
+            <IconButton href="https://www.linkedin.com/in/alyuzasp/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <LinkedInIcon className={styles.socialMediaIcon} />
             </IconButton>
-            <IconButton href="https://github.com/alyuza" target="_blank" rel="noreferrer">
+            <IconButton href="https://github.com/alyuza" target="_blank" rel="noreferrer" aria-label="GitHub">
               <GitHubIcon className={styles.socialMediaIcon} />
             </IconButton>
-            <IconButton href="mailto:alyuza.sat@gmail.com">
+            <IconButton href="mailto:alyuza.sat@gmail.com" aria-label="Email">
               <EmailIcon className={styles.socialMediaIcon} />
             </IconButton>
-            <IconButton href="https://www.instagram.com/alyuzasp/" target="_blank" rel="noreferrer">
+            <IconButton href="https://www.instagram.com/alyuzasp/" target="_blank" rel="noreferrer" aria-label="Instagram">
               <InstagramIcon className={styles.socialMediaIcon} />
             </IconButton>
           </Box>
