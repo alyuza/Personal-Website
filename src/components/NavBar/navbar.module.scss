@@ -9,6 +9,9 @@ $bcolor1: rgb(242, 245, 255);
   display: flex;
   background-color: rgba(242, 245, 255, 0.2) !important;
   backdrop-filter: blur(20px);
+  box-shadow: none !important;
+  height: 80px;
+  padding: 0px 40px;
 
   .burgerButton {
     color: black;
@@ -96,6 +99,9 @@ $bcolor1: rgb(242, 245, 255);
 
 @media only screen and (max-width: 768px) {
   .navbar {
+    height: 56px;
+    padding: 0px;
+
     .listItemText {
       margin: 5px 0px 5px 5px !important;
     }

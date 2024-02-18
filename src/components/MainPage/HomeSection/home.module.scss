@@ -9,7 +9,7 @@ $bcolor1: linear-gradient(180deg, rgba(255, 255, 255, 0.101) 0%, rgba(255, 255, 
 .home {
   background: $bcolor0;
   padding: 0px 20px 20px 20px;
-  height: 86vh;
+  height: 84vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,7 +118,7 @@ $bcolor1: linear-gradient(180deg, rgba(255, 255, 255, 0.101) 0%, rgba(255, 255, 
 
 @media only screen and (max-width: 768px) {
   .home {
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; // Align children to the start (top) of the container
