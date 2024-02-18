@@ -8,6 +8,12 @@ import styles from "./footer.module.scss"
 export default function Footer() {
   return (
     <Box component="footer" className={styles.footer}>
+      <Box>
+        <Typography variant="body2" color="text.secondary">
+          {"Copyright © 2024 Alyuza Satrio Prayogo"}
+        </Typography>
+      </Box>
+
       {/* <Grid container spacing={5}>
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" color="text.primary" gutterBottom>
@@ -65,12 +71,6 @@ export default function Footer() {
             </Box>
           </Grid>
         </Grid> */}
-
-      <Box>
-        <Typography variant="body2" color="text.secondary">
-          {"Copyright © 2024 Alyuza Satrio Prayogo"}
-        </Typography>
-      </Box>
     </Box >
   );
 }

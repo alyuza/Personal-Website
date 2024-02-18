@@ -1,0 +1,54 @@
+.pageNotFound {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: left;
+
+  .text {
+    font-size: 50px;
+  }
+
+  .text2 {
+    font-size: 30px;
+  }
+}
+
+.astronaut {
+  margin-left: 30px;
+  width: 200px;
+  height: auto;
+  animation: moveUpDown 2s ease-in-out infinite alternate;
+
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-100px);
+    }
+  }
+}
+
+@media screen and (max-width:768px) {
+  .pageNotFound {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    .text {
+      font-size: 24px;
+    }
+
+    .text2 {
+      font-size: 14px;
+    }
+  }
+
+  .astronaut {
+    margin-bottom: 30px;
+  }
+
+
+}
