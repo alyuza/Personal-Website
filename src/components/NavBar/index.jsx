@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import HeaderLogo from '../../assets/logonavbar.png';
-import styles from './navbar.module.scss'
+import styles from './navbar.module.scss';
 
 export default function NavBar() {
   const small = useMediaQuery("(max-width:1000px)");
@@ -24,14 +24,14 @@ export default function NavBar() {
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    // Retrieve active section from localStorage when component mounts
-    const storedSection = localStorage.getItem('activeSection');
-    if (storedSection) {
-      setActiveSection(storedSection);
-    }
-  }, []); // Empty dependency array to run this effect only once on component mount
+    // Update active section when location changes
+    const path = location.pathname;
+    const section = path.substring(1); // Assuming paths start with "/"
+    setActiveSection(section);
+  }, [location]); // Re-run effect when location changes
 
   const handleClick = () => {
     setOpen(!open);
@@ -44,9 +44,6 @@ export default function NavBar() {
   const mobileNavigateTo = (section) => {
     navigate("/" + section);
     setOpen(false);
-    setActiveSection(section);
-    // Store active section in localStorage
-    localStorage.setItem('activeSection', section);
   };
 
   return (
