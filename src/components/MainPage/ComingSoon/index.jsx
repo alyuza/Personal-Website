@@ -9,7 +9,7 @@ export default function index() {
   return (
     <Box className={styles.soonPage}>
         <img className={styles.soonImage} src={comingsoonimage} alt="Alyuza Photo" />
-        <img className={styles.kepalaImage} src={kepala} alt="Alyuza Photo" />
+        {/* <img className={styles.kepalaImage} src={kepala} alt="Alyuza Photo" /> */}
     </Box>
   )
 }
