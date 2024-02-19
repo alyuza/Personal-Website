@@ -19,8 +19,8 @@ import HeaderLogo from '../../assets/logonavbar.png';
 import styles from './navbar.module.scss'
 
 export default function NavBar() {
-  const small = useMediaQuery("(max-width:900px)");
-  const full = useMediaQuery("(min-width:900px)");
+  const small = useMediaQuery("(max-width:1000px)");
+  const full = useMediaQuery("(min-width:1000px)");
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const navigate = useNavigate();
@@ -76,14 +76,14 @@ export default function NavBar() {
                         Home {activeSection === '' && <span className={styles.arrowIcon}> <ArrowLeftIcon />You{`'`}re here </span>}
                       </Typography>
                     </ListItem>
-                    <ListItem className={styles.listItem} onClick={() => mobileNavigateTo('projects')}>
-                      <Typography className={styles.listItemText}>
-                        Projects {activeSection === 'projects' && <span className={styles.arrowIcon}> <ArrowLeftIcon />You{`'`}re here </span>}
-                      </Typography>
-                    </ListItem>
                     <ListItem className={styles.listItem} onClick={() => mobileNavigateTo('about')}>
                       <Typography className={styles.listItemText}>
                         About {activeSection === 'about' && <span className={styles.arrowIcon}> <ArrowLeftIcon />You{`'`}re here </span>}
+                      </Typography>
+                    </ListItem>
+                    <ListItem className={styles.listItem} onClick={() => mobileNavigateTo('projects')}>
+                      <Typography className={styles.listItemText}>
+                        Projects {activeSection === 'projects' && <span className={styles.arrowIcon}> <ArrowLeftIcon />You{`'`}re here </span>}
                       </Typography>
                     </ListItem>
                     <ListItem className={styles.listItem} onClick={() => mobileNavigateTo('technologies')}>
