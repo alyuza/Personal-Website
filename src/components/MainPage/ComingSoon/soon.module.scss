@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 120px;
 
   .soonImage {
     display: flex;
@@ -36,7 +35,6 @@
 
 @media only screen and (max-width:1000px) {
   .soonPage {
-    padding-left: 90px;
     .soonImage {
       display: flex;
       position: relative;
